@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="741-4w-meG">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash Main-->
+        <scene sceneID="pf6-w6-E0S">
+            <objects>
+                <viewController storyboardIdentifier="Splash_Main" id="741-4w-meG" customClass="Splash_Main" customModule="Cyrano" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pZC-mv-bzE"/>
+                        <viewControllerLayoutGuide type="bottom" id="lye-JM-Zf4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G4M-dr-S4s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="oGW-cS-pvu">
+                                <rect key="frame" x="-5.6937343016907107" y="-4.174658882666904" width="385.00000000000006" height="677.00000000000023"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oGW-cS-pvu" firstAttribute="bottom" secondItem="lye-JM-Zf4" secondAttribute="top" constant="5.8253411173333234" id="4se-zE-CAd"/>
+                            <constraint firstAttribute="trailing" secondItem="oGW-cS-pvu" secondAttribute="trailing" constant="-4.3062656983093461" id="Sgr-pE-RkC"/>
+                            <constraint firstItem="oGW-cS-pvu" firstAttribute="leading" secondItem="G4M-dr-S4s" secondAttribute="leading" constant="-5.6937343016907107" id="jr5-H8-VL4"/>
+                            <constraint firstItem="oGW-cS-pvu" firstAttribute="top" secondItem="G4M-dr-S4s" secondAttribute="top" constant="-4.174658882666904" id="qFc-bT-tqM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8yi-h7-4Pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="-322.48875562218893"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="splash" width="392" height="698"/>
+    </resources>
+</document>

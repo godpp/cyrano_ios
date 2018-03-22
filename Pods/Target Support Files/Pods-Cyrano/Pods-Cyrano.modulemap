@@ -1,0 +1,6 @@
+framework module Pods_Cyrano {
+  umbrella header "Pods-Cyrano-umbrella.h"
+
+  export *
+  module * { export * }
+}
