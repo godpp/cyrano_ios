@@ -99,8 +99,6 @@ class SettingMain : UIViewController, NetworkCallback {
             let alert = UIAlertController(title: "로그아웃", message: "로그아웃 하시겠습니까?", preferredStyle: .alert)
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
                 (_)in
-//                self.performSegue(withIdentifier: "unwindToLogin", sender: self)
-                
                 
                 let splash_storyboard = UIStoryboard(name: "Splash", bundle: nil)
                 //메인 뷰컨트롤러 접근

@@ -33,7 +33,6 @@ class NoldamAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioni
         let finalFrameForVC = transitionContext.finalFrame(for: animatingVC!)
         var initialFrameForVC = finalFrameForVC
         initialFrameForVC.origin.x += initialFrameForVC.size.width
-        //initialFrameForVC.origin.x += 50
         
         let initialFrame = isPresentation ? initialFrameForVC : finalFrameForVC
         let finalFrame = isPresentation ? finalFrameForVC : initialFrameForVC

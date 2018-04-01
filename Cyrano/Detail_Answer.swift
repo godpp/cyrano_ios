@@ -55,7 +55,6 @@ class Detail_Answer : UIViewController, NetworkCallback {
     func WriteAlert(title: String, msg: String) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "확인", style: .default) { (UIAlertAction) in
-            //self.performSegue(withIdentifier: "unwindToDetailMain", sender: self)
             self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(okAction)
