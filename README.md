@@ -1,6 +1,7 @@
 # # Cyrano
 <img src="image/Cyrano.png" width="60">
 연애고민에 특화된 전문적인 상담을 보다 쉽게 서비스하기 위해 기획한 애플리케이션.
+Blog : <https://godpp.github.io/2017/08/08/Cyrano%20IOS%20App/>
 
 ## # 개요
 
