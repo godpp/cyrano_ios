@@ -11,12 +11,10 @@ import UIKit
 
 class Main_Tab : UITabBarController{
     override func viewDidLoad() {
+        
+        //TabBar tint 값 제거 및 이미지 적용
         UITabBar.appearance().barTintColor = UIColor.init(red: 27/255.0, green: 43/255.0, blue: 56/255.0, alpha: 0.0)
-        
-        // UITabBar.appearance().tintColor =
-        
         var tabBar = self.tabBar
-        
         var homeImage = UIImage(named:"tab_home_selection_last")?.withRenderingMode(.alwaysOriginal)
         var mypageImg = UIImage(named: "tab_mypage_selection_last")?.withRenderingMode(.alwaysOriginal)
         var notificationImg = UIImage(named: "tab_alram_selection_last")?.withRenderingMode(.alwaysOriginal)
