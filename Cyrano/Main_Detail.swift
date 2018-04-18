@@ -21,6 +21,11 @@ class Main_Detail : UIViewController, UITableViewDelegate, UITableViewDataSource
     var detail_user_id : Int?
     var answer_user_id : Int?
     
+    var like_state_num = 0
+    
+    var unclick_like_image = UIImage(named: "main_answer_heart_unclick")?.withRenderingMode(.alwaysOriginal)
+    var click_like_image = UIImage(named: "main_answer_heart_click")?.withRenderingMode(.alwaysOriginal)
+    
     @IBOutlet weak var detail_TableView: UITableView!
     
     
@@ -28,6 +33,7 @@ class Main_Detail : UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewDidLoad() {
         login_user_id = ud.integer(forKey: "login_user_id")
+        
         //셀이 비어있을때 테이블뷰 줄가있는거 없애기
         detail_TableView.tableFooterView = UIView.init(frame : CGRect.zero)
         detail_TableView.tableHeaderView = UIView.init(frame : CGRect.zero)
@@ -40,11 +46,14 @@ class Main_Detail : UIViewController, UITableViewDelegate, UITableViewDataSource
         
         let model = DetailModel(self)
         model.getDetailComment(article_id: gino(article_id))
+    
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        detail_TableView.reloadData()
+    @IBAction func like_Btn(_ sender: Any) {
+        let model = DetailModel(self)
+        model.addlike(article_id: gino(article_id))
     }
+    
     
     // 답변에 채택된게 있는지 확인
 //    func is_chosen_check() -> Bool{
@@ -108,19 +117,10 @@ class Main_Detail : UIViewController, UITableViewDelegate, UITableViewDataSource
             guard let user_profile = storyboard?.instantiateViewController(withIdentifier: "UserProfileVC") as? UserProfileVC else {
                 return
             }
-            
-            //user_profile.user_id = sender.
             self.present(user_profile, animated: true)
         }
         
         let row = answerList[0]
-        
-//        guard let user_profile = storyboard?.instantiateViewController(withIdentifier: "UserProfileVC") as? UserProfileVC else {
-//            return
-//        }
-//        
-//        user_profile.user_id = row.user_id
-//        self.present(user_profile, animated: true)
     }
     
     
@@ -315,10 +315,8 @@ class Main_Detail : UIViewController, UITableViewDelegate, UITableViewDataSource
         }
     }
     
-    //테이블 셀 클릭시
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //
-    }
+    // no event
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
     
     // 테이블 셀 높이
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -341,12 +339,17 @@ class Main_Detail : UIViewController, UITableViewDelegate, UITableViewDataSource
         if code == "4-1"{
             list = resultData as! [DetailCommentItemVO]
             
+            if detailList.isEmpty == true {
+                detailList.append(list.first!)
+            }
+            answerList = list
+            answerList.remove(at: 0)
+            answerList.reverse()
+            
             detail_TableView.estimatedRowHeight = 40.0
             detail_TableView.rowHeight = UITableViewAutomaticDimension
             
-            detailList.append(list.first!)
-            answerList = list
-            answerList.remove(at: 0)
+            detail_TableView.reloadData()
         }
         else if code == "1"{
             let msg = resultData as? String

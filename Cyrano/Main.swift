@@ -43,11 +43,13 @@ class Main : UIViewController, UITableViewDelegate, UITableViewDataSource, Netwo
     }
     
     func refresh(){
-        
-        guard let main_tab = self.storyboard?.instantiateViewController(withIdentifier: "Main_Tab") as? Main_Tab else{
-            return
-        }
-        self.present(main_tab, animated: true)
+        let model = LoginModel(self)
+        model.getMainArticleList(id: gino(id))
+        viewDidLoad()
+//        guard let main_tab = self.storyboard?.instantiateViewController(withIdentifier: "Main_Tab") as? Main_Tab else{
+//            return
+//        }
+//        self.present(main_tab, animated: true)
         refreshControl.endRefreshing()
     }
     
@@ -64,8 +66,8 @@ class Main : UIViewController, UITableViewDelegate, UITableViewDataSource, Netwo
          //테이블 뷰 아래로 리로딩
         self.mainTableView.es_addInfiniteScrolling {
             [weak self] in
-            let model = LoginModel(self!)
-            model.getMainArticleList(id: (self?.gino(self?.id))!)
+//            let model = LoginModel(self!)
+//            model.getMainArticleList(id: (self?.gino(self?.id))!)
             
             if ((self?.articleList.last) == nil){
                 self?.mainTableView.es_noticeNoMoreData()

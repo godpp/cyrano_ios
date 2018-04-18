@@ -24,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CYD-Rw-hI3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CYD-Rw-hI3">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -53,10 +53,6 @@
                                                     <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpM-PQ-FHx">
-                                                    <rect key="frame" x="313" y="11" width="47" height="13"/>
-                                                    <state key="normal" backgroundImage="main_answer_report_button"/>
-                                                </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_answer_myinkk" translatesAutoresizingMaskIntoConstraints="NO" id="mQ4-3e-yKP">
                                                     <rect key="frame" x="119" y="78" width="13" height="19"/>
                                                     <constraints>
@@ -103,6 +99,9 @@
                                                     <state key="normal" backgroundImage="main_answer_heart_unclick">
                                                         <color key="titleColor" red="1" green="0.39607843139999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="like_Btn:" destination="boC-Nf-lqV" eventType="touchUpInside" id="HMG-bH-KKX"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고민 내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjp-if-TGZ">
                                                     <rect key="frame" x="15" y="159" width="345" height="17"/>
@@ -129,19 +128,16 @@
                                                 <constraint firstItem="mQ4-3e-yKP" firstAttribute="top" secondItem="3gO-DX-l1m" secondAttribute="bottom" constant="17" id="SSz-6m-Tk0"/>
                                                 <constraint firstItem="PKy-qV-Efn" firstAttribute="leading" secondItem="eFA-Tm-4H8" secondAttribute="leading" constant="25" id="Sep-39-DCs"/>
                                                 <constraint firstItem="GgI-iv-l0C" firstAttribute="top" secondItem="eFA-Tm-4H8" secondAttribute="top" constant="81" id="U07-xP-6Gl"/>
-                                                <constraint firstItem="Nb4-3i-SRQ" firstAttribute="top" secondItem="BpM-PQ-FHx" secondAttribute="bottom" constant="-13" id="Vmo-nf-Tmc"/>
                                                 <constraint firstAttribute="bottom" secondItem="MBp-7m-RUP" secondAttribute="bottom" constant="24.5" id="Vvt-Q7-JVC"/>
+                                                <constraint firstItem="z1i-FC-9hQ" firstAttribute="top" secondItem="eFA-Tm-4H8" secondAttribute="top" constant="82" id="Y65-0R-oKr"/>
                                                 <constraint firstAttribute="trailing" secondItem="z1i-FC-9hQ" secondAttribute="trailing" constant="15" id="YZg-DG-LsT"/>
                                                 <constraint firstItem="RUp-cB-E4F" firstAttribute="top" secondItem="z1i-FC-9hQ" secondAttribute="bottom" constant="16" id="ZtK-HL-ZyC"/>
                                                 <constraint firstItem="mQ4-3e-yKP" firstAttribute="leading" secondItem="eFA-Tm-4H8" secondAttribute="leading" constant="119" id="a3O-Ou-JIm"/>
                                                 <constraint firstItem="PKy-qV-Efn" firstAttribute="top" secondItem="Nb4-3i-SRQ" secondAttribute="bottom" constant="-17" id="bPV-ik-Azl"/>
                                                 <constraint firstItem="kjp-if-TGZ" firstAttribute="leading" secondItem="eFA-Tm-4H8" secondAttribute="leading" constant="15" id="dD8-Pa-jpV"/>
                                                 <constraint firstAttribute="trailing" secondItem="MBp-7m-RUP" secondAttribute="trailing" constant="8" id="ds3-jK-17c"/>
-                                                <constraint firstItem="z1i-FC-9hQ" firstAttribute="top" secondItem="BpM-PQ-FHx" secondAttribute="bottom" constant="58" id="hGk-p4-WJh"/>
                                                 <constraint firstItem="3gO-DX-l1m" firstAttribute="top" secondItem="Nb4-3i-SRQ" secondAttribute="bottom" constant="19" id="lCy-rd-DBX"/>
-                                                <constraint firstItem="BpM-PQ-FHx" firstAttribute="top" secondItem="eFA-Tm-4H8" secondAttribute="top" constant="11" id="lvT-vD-KIP"/>
                                                 <constraint firstItem="Nb4-3i-SRQ" firstAttribute="top" secondItem="eFA-Tm-4H8" secondAttribute="top" constant="11" id="oCN-Ff-LEd"/>
-                                                <constraint firstAttribute="trailing" secondItem="BpM-PQ-FHx" secondAttribute="trailing" constant="15" id="qzY-hu-pfE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -188,7 +184,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_answer_pinkbox" translatesAutoresizingMaskIntoConstraints="NO" id="ww7-z9-EhJ">
+                                                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_answer_pinkbox" translatesAutoresizingMaskIntoConstraints="NO" id="ww7-z9-EhJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="63"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_answer_feather" translatesAutoresizingMaskIntoConstraints="NO" id="NLR-6B-wEB">
@@ -265,13 +261,6 @@
                                                         <constraint firstAttribute="width" secondItem="0sT-SX-O6U" secondAttribute="height" multiplier="1:1" id="n6d-7z-m8y"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rC-IA-UTl">
-                                                    <rect key="frame" x="313" y="36" width="47" height="14"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="4rC-IA-UTl" secondAttribute="height" multiplier="47:14" id="fxG-BP-PPS"/>
-                                                    </constraints>
-                                                    <state key="normal" backgroundImage="main_answer_report_button"/>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hUm-H6-icc">
                                                     <rect key="frame" x="312" y="286" width="48" height="48"/>
                                                     <constraints>
@@ -310,7 +299,6 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4rC-IA-UTl" firstAttribute="top" secondItem="Egf-6o-k81" secondAttribute="top" constant="36" id="1bQ-LA-epY"/>
                                                 <constraint firstAttribute="bottom" secondItem="LeF-uC-5Ug" secondAttribute="bottom" id="2TZ-jB-f8G"/>
                                                 <constraint firstItem="OZ3-zN-Gik" firstAttribute="leading" secondItem="AUV-bC-P3v" secondAttribute="trailing" constant="12" id="2um-zE-zg5"/>
                                                 <constraint firstItem="LeF-uC-5Ug" firstAttribute="leading" secondItem="Egf-6o-k81" secondAttribute="leading" id="4Dg-1d-dTi"/>
@@ -323,13 +311,11 @@
                                                 <constraint firstItem="ibu-o5-TgY" firstAttribute="leading" secondItem="Egf-6o-k81" secondAttribute="leading" constant="36" id="Gp4-Il-yxB"/>
                                                 <constraint firstAttribute="trailing" secondItem="LeF-uC-5Ug" secondAttribute="trailing" id="H2R-6T-e8Z"/>
                                                 <constraint firstItem="0sT-SX-O6U" firstAttribute="top" secondItem="Egf-6o-k81" secondAttribute="top" constant="22" id="Isy-o4-eDt"/>
-                                                <constraint firstAttribute="trailing" secondItem="4rC-IA-UTl" secondAttribute="trailing" constant="15" id="J0p-aA-uv1"/>
                                                 <constraint firstItem="M90-Jj-oIs" firstAttribute="top" secondItem="Egf-6o-k81" secondAttribute="top" constant="36" id="Mcn-ht-9rY"/>
                                                 <constraint firstItem="27H-GN-Lck" firstAttribute="leading" secondItem="Egf-6o-k81" secondAttribute="leading" constant="36" id="OPh-Xa-1ae"/>
                                                 <constraint firstItem="t0F-zX-ncG" firstAttribute="top" secondItem="Egf-6o-k81" secondAttribute="top" constant="118" id="OrO-bg-pek"/>
                                                 <constraint firstItem="11L-3D-JOX" firstAttribute="leading" secondItem="Egf-6o-k81" secondAttribute="leading" constant="36" id="QlZ-lR-POR"/>
                                                 <constraint firstItem="OZ3-zN-Gik" firstAttribute="centerY" secondItem="AUV-bC-P3v" secondAttribute="centerY" id="RbZ-7h-JeX"/>
-                                                <constraint firstItem="4rC-IA-UTl" firstAttribute="leading" secondItem="Egf-6o-k81" secondAttribute="leading" constant="313" id="T7J-t6-88m"/>
                                                 <constraint firstItem="OZ3-zN-Gik" firstAttribute="top" secondItem="ibu-o5-TgY" secondAttribute="bottom" constant="72" id="VXf-3M-2Ih"/>
                                                 <constraint firstItem="27H-GN-Lck" firstAttribute="top" secondItem="Y0t-13-CnM" secondAttribute="bottom" constant="8" id="W6d-Wa-Kg3"/>
                                                 <constraint firstAttribute="trailing" secondItem="ibu-o5-TgY" secondAttribute="trailing" constant="36" id="WqR-cg-Mdc"/>
@@ -2071,7 +2057,7 @@
                                     <constraint firstAttribute="width" constant="73" id="Djp-8y-keE"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vIp-UR-BV9" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vIp-UR-BV9" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="120" y="350" width="135" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vIp-UR-BV9" secondAttribute="height" multiplier="135:23" id="PAZ-we-m8B"/>
@@ -2389,10 +2375,10 @@
                                     <constraint firstAttribute="width" secondItem="fPp-zd-xeH" secondAttribute="height" multiplier="169:34" id="FS9-wq-2Bd"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="writepage_line_grey" translatesAutoresizingMaskIntoConstraints="NO" id="HyW-aD-WWB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="writepage_line_grey" translatesAutoresizingMaskIntoConstraints="NO" id="HyW-aD-WWB">
                                 <rect key="frame" x="10" y="435" width="356" height="1"/>
                             </imageView>
-                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="I6L-YL-cw5" customClass="CosmosView" customModule="Cosmos">
+                            <view contentMode="center" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I6L-YL-cw5" customClass="CosmosView" customModule="Cosmos">
                                 <rect key="frame" x="97" y="373" width="180" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="I6L-YL-cw5" secondAttribute="height" multiplier="5:1" id="ILb-nq-ySV"/>
@@ -3213,7 +3199,7 @@
         <image name="answer_answer_button" width="65" height="29"/>
         <image name="answer_information" width="303" height="83"/>
         <image name="background" width="375" height="667"/>
-        <image name="background_top" width="375" height="667"/>
+        <image name="background_top" width="376" height="669"/>
         <image name="bar_navigation_logo" width="25" height="18"/>
         <image name="button_won" width="89" height="33"/>
         <image name="choice_open" width="290" height="48"/>
@@ -3237,7 +3223,6 @@
         <image name="main_answer_myinkk" width="13" height="19"/>
         <image name="main_answer_normaluser_box" width="393" height="298"/>
         <image name="main_answer_pinkbox" width="393" height="82"/>
-        <image name="main_answer_report_button" width="47" height="12"/>
         <image name="main_feather" width="36" height="36"/>
         <image name="main_whitebox" width="393" height="155"/>
         <image name="mentor_badge" width="91" height="108"/>

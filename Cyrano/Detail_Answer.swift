@@ -38,7 +38,6 @@ class Detail_Answer : UIViewController, NetworkCallback {
     @IBAction func question_look_Btn(_ sender: Any) {
     }
     
-    
     //통신 성공
     func networkResult(resultData: Any, code: String) {
         if code == "6"{
