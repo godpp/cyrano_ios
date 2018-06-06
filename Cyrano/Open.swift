@@ -41,15 +41,6 @@ class Open : UIViewController, NetworkCallback {
         super.viewDidLoad()
     }
     
-    //해쉬태그 추가 버튼
-    @IBAction func hashtag_Btn(_ sender: Any) {
-        guard let hashtag = storyboard?.instantiateViewController(withIdentifier: "Hashtag") as? Hashtag else{
-            return
-        }
-        self.present(hashtag, animated: true)
-        
-    }
-    
     //글쓰기 버튼
     @IBAction func write_Btn(_ sender: Any) {
         

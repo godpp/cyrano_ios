@@ -37,12 +37,10 @@
 		4C7B22271F06D60200E95E69 /* NickModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B22251F06D60200E95E69 /* NickModel.swift */; };
 		4C7B22281F06D60200E95E69 /* JoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B22261F06D60200E95E69 /* JoinModel.swift */; };
 		4C7B222B1F06F40E00E95E69 /* WriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B222A1F06F40E00E95E69 /* WriteModel.swift */; };
-		4C7B222D1F06FDCA00E95E69 /* Hashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B222C1F06FDCA00E95E69 /* Hashtag.swift */; };
 		4C7B222F1F07A54500E95E69 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B222E1F07A54500E95E69 /* PopupVC.swift */; };
 		4C7B22341F07A71F00E95E69 /* NoldamAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B22311F07A71F00E95E69 /* NoldamAnimatedTransitioning.swift */; };
 		4C7B22351F07A71F00E95E69 /* NoldamPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B22321F07A71F00E95E69 /* NoldamPresentationController.swift */; };
 		4C7B22361F07A71F00E95E69 /* NoldamTrasitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B22331F07A71F00E95E69 /* NoldamTrasitionDelegate.swift */; };
-		4C7B22381F0804E600E95E69 /* hashtag_Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B22371F0804E600E95E69 /* hashtag_Cell.swift */; };
 		4C7B223C1F084D7700E95E69 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B223B1F084D7700E95E69 /* DetailModel.swift */; };
 		4C7B223F1F084E4700E95E69 /* DetailCommentItemVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B223E1F084E4700E95E69 /* DetailCommentItemVO.swift */; };
 		4C7B22411F084FDF00E95E69 /* DetailCommentVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B22401F084FDF00E95E69 /* DetailCommentVO.swift */; };
@@ -124,12 +122,10 @@
 		4C7B22251F06D60200E95E69 /* NickModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NickModel.swift; sourceTree = "<group>"; };
 		4C7B22261F06D60200E95E69 /* JoinModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinModel.swift; sourceTree = "<group>"; };
 		4C7B222A1F06F40E00E95E69 /* WriteModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteModel.swift; sourceTree = "<group>"; };
-		4C7B222C1F06FDCA00E95E69 /* Hashtag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hashtag.swift; sourceTree = "<group>"; };
 		4C7B222E1F07A54500E95E69 /* PopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
 		4C7B22311F07A71F00E95E69 /* NoldamAnimatedTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoldamAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		4C7B22321F07A71F00E95E69 /* NoldamPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoldamPresentationController.swift; sourceTree = "<group>"; };
 		4C7B22331F07A71F00E95E69 /* NoldamTrasitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoldamTrasitionDelegate.swift; sourceTree = "<group>"; };
-		4C7B22371F0804E600E95E69 /* hashtag_Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hashtag_Cell.swift; sourceTree = "<group>"; };
 		4C7B223B1F084D7700E95E69 /* DetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		4C7B223E1F084E4700E95E69 /* DetailCommentItemVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCommentItemVO.swift; sourceTree = "<group>"; };
 		4C7B22401F084FDF00E95E69 /* DetailCommentVO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCommentVO.swift; sourceTree = "<group>"; };
@@ -266,8 +262,6 @@
 				4C7B21EE1F05232300E95E69 /* Write.swift */,
 				4C7B22081F05661D00E95E69 /* Main_Tab.swift */,
 				4C7B220F1F057D9400E95E69 /* Open.swift */,
-				4C7B222C1F06FDCA00E95E69 /* Hashtag.swift */,
-				4C7B22371F0804E600E95E69 /* hashtag_Cell.swift */,
 				4C9E9FF51F098C8F00FA0F04 /* Detail_Answer.swift */,
 				4CF0E8191F0BDDE300D89A1C /* ChoiceAnswer.swift */,
 			);
@@ -687,7 +681,6 @@
 				7305CCA81F011A9000DE9CA9 /* NetworkModel.swift in Sources */,
 				4C6089B91F13E6CE00B3BB69 /* DetailCell.swift in Sources */,
 				4CE29E061F0FC33F009989F6 /* SDone_PopupVC.swift in Sources */,
-				4C7B222D1F06FDCA00E95E69 /* Hashtag.swift in Sources */,
 				4CE29E151F104506009989F6 /* CommentCell.swift in Sources */,
 				4C9E9FF61F098C8F00FA0F04 /* Detail_Answer.swift in Sources */,
 				4CE29E101F103F98009989F6 /* CommentMessageVO.swift in Sources */,
@@ -758,7 +751,6 @@
 				4C7B22411F084FDF00E95E69 /* DetailCommentVO.swift in Sources */,
 				4C7B22281F06D60200E95E69 /* JoinModel.swift in Sources */,
 				4C7B222F1F07A54500E95E69 /* PopupVC.swift in Sources */,
-				4C7B22381F0804E600E95E69 /* hashtag_Cell.swift in Sources */,
 				4C7B22361F07A71F00E95E69 /* NoldamTrasitionDelegate.swift in Sources */,
 				4C7B21DC1F02881100E95E69 /* ExtensionControl.swift in Sources */,
 				4C7B22231F06D3E200E95E69 /* Join_1.swift in Sources */,

@@ -16,10 +16,15 @@ extension UITextField {
         self.layer.addSublayer(border)
     }
 }
-class Login : UIViewController, NetworkCallback{
+class Login : UIViewController, UIGestureRecognizerDelegate, NetworkCallback{
+    
+    @IBOutlet var centerYconstraint: NSLayoutConstraint!
+    @IBOutlet var loginStackView: UIStackView!
+    @IBOutlet var logoImageView: UIImageView!
     
     let ud = UserDefaults.standard
     var loginVO : LoginVO?
+    var check = true
     
     //통신 성공
     func networkResult(resultData: Any, code: String) {
@@ -86,12 +91,88 @@ class Login : UIViewController, NetworkCallback{
         self.present(join_1, animated: true)
     }
     
+    override func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTxt {
+            passTxt.becomeFirstResponder()
+        } else if textField == passTxt {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+    
+    func gestureRecognizer(
+        _ gestureRecognizer: UIGestureRecognizer,
+        shouldReceive touch: UITouch
+        ) -> Bool {
+        if(touch.view?.isDescendant(of: loginStackView))!{
+            return false
+        }
+        return true
+    }
+    @objc func handleTap_mainview(_ sender: UITapGestureRecognizer?){
+        self.loginStackView.becomeFirstResponder()
+        self.loginStackView.resignFirstResponder()
+        
+    }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(keyboardWillShow),
+            name: .UIKeyboardWillShow,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector:#selector(keyboardWillHide),
+            name: .UIKeyboardWillHide,
+            object: nil
+        )
+    }
+    func unregisterForKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name:.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name:.UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if check {
+            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]
+                as? NSValue)?.cgRectValue {
+                centerYconstraint.constant = -150
+                check = false
+                logoImageView.isHidden = true
+                view.layoutIfNeeded()
+            }
+        }
+    }
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]
+            as? NSValue)?.cgRectValue {
+            centerYconstraint.constant = 0
+            check = true
+            logoImageView.isHidden = false
+            view.layoutIfNeeded()
+        }
+    }
+    
 
     @IBOutlet var emailTxt: UITextField!
     @IBOutlet var passTxt: UITextField!
     
+    override func viewWillAppear(_ animated: Bool) {
+        registerForKeyboardNotifications()
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        unregisterForKeyboardNotifications()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap_mainview(_:)))
+        tap.delegate = self
+        self.view.addGestureRecognizer(tap)
 
         //textfield 밑줄 + placeholder 색지정하기 뀨
         self.emailTxt.delegate = self

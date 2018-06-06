@@ -26,48 +26,38 @@ class Main : UIViewController, UITableViewDelegate, UITableViewDataSource, Netwo
     
     var refreshControl = UIRefreshControl()
     
-    @IBAction func refresh_Btn(_ sender: Any) {
-        guard let main_tab = self.storyboard?.instantiateViewController(withIdentifier: "Main_Tab") as? Main_Tab else{
-            return
-        }
-        self.present(main_tab, animated: true)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainTableView.delegate = self
+        mainTableView.dataSource = self
+        self.setTabBar()
+        //셀이 비어있을때 테이블뷰 줄가있는거 없애기
+        mainTableView.tableFooterView = UIView.init(frame : CGRect.zero)
         
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "새로고침")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-        mainTableView.addSubview(refreshControl)
         mainTableView.refreshControl = refreshControl
     }
     
     func refresh(){
-        let model = LoginModel(self)
-        model.getMainArticleList(id: gino(id))
-        viewDidLoad()
-//        guard let main_tab = self.storyboard?.instantiateViewController(withIdentifier: "Main_Tab") as? Main_Tab else{
-//            return
-//        }
-//        self.present(main_tab, animated: true)
-        refreshControl.endRefreshing()
+        if refreshControl.isRefreshing == true{
+            articleList = []
+            let model = LoginModel(self)
+            model.getMainArticleList(id: Int.max)
+        }
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         
-        mainTableView.delegate = self
-        mainTableView.dataSource = self
-        
         let model = LoginModel(self)
-        
         model.getMainArticleList(id : id)
         
          //테이블 뷰 아래로 리로딩
         self.mainTableView.es_addInfiniteScrolling {
             [weak self] in
-//            let model = LoginModel(self!)
-//            model.getMainArticleList(id: (self?.gino(self?.id))!)
+            let model = LoginModel(self!)
+            model.getMainArticleList(id: (self?.gino(self?.id))!)
             
             if ((self?.articleList.last) == nil){
                 self?.mainTableView.es_noticeNoMoreData()
@@ -75,12 +65,8 @@ class Main : UIViewController, UITableViewDelegate, UITableViewDataSource, Netwo
             else{
                 self?.mainTableView.es_stopLoadingMore()
             }
+            self?.mainTableView.reloadData()
         }
-        
-        self.setTabBar()
-    
-        //셀이 비어있을때 테이블뷰 줄가있는거 없애기
-        mainTableView.tableFooterView = UIView.init(frame : CGRect.zero)
     }
     
 
@@ -112,16 +98,11 @@ class Main : UIViewController, UITableViewDelegate, UITableViewDataSource, Netwo
         let gender = gino(row.gender)
         
         id = gino(last?.article_id)
-        print(row.written_time)
         let currentTime = getCurrentMillis()
         let wr_time = Int64(gino(row.written_time))
-        print(currentTime)
-        print(wr_time)
         let write_time : Int64 = (currentTime - wr_time) / 1000 / 60
         var time = Int(write_time)
-        
-        print(gino(time))
-        
+    
         if time <= 1 {
             cell.wrttentime_Label.text = "방금 전"
         }
@@ -206,6 +187,7 @@ class Main : UIViewController, UITableViewDelegate, UITableViewDataSource, Netwo
     func networkResult(resultData: Any, code: String) {
         if code == "1"{
             articleList += resultData as! [ArticleItemVO]
+            refreshControl.endRefreshing()
             mainTableView.reloadData()
         }
     }
