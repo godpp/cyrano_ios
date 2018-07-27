@@ -2952,7 +2952,7 @@
         <image name="adoptpage_thanksto_pink-1" width="205" height="34"/>
         <image name="answer_answer_button" width="65" height="29"/>
         <image name="answer_information" width="303" height="83"/>
-        <image name="background" width="380" height="645"/>
+        <image name="background" width="375" height="667"/>
         <image name="background_top" width="376" height="669"/>
         <image name="bar_navigation_logo" width="25" height="18"/>
         <image name="button_won" width="89" height="33"/>
@@ -2986,10 +2986,10 @@
         <image name="mentor_profile_whitebox_real" width="373" height="315"/>
         <image name="myink_inkcharge" width="48" height="70"/>
         <image name="myinkk" width="54" height="65"/>
-        <image name="myinkkk" width="54" height="65"/>
+        <image name="myinkkk" width="13" height="19"/>
         <image name="profile_answer_count" width="142" height="45"/>
         <image name="profile_background_pinkbox" width="375" height="168"/>
-        <image name="profile_man" width="87" height="87"/>
+        <image name="profile_man" width="52" height="52"/>
         <image name="secreat_answer_information" width="181" height="81"/>
         <image name="setting_alarm" width="94" height="94"/>
         <image name="setting_box" width="375" height="47"/>
